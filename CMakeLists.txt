@@ -73,16 +73,15 @@ find_package(Threads REQUIRED)
 find_package(STLCache REQUIRED)
 find_package(ICU REQUIRED COMPONENTS i18n uc data)
 find_package(SQLite3 REQUIRED)
-find_package(SQLiteORM REQUIRED)
+find_package(SQLiteModernCPP REQUIRED)
 find_package(Boost REQUIRED COMPONENTS regex)
 
 # Boost
-# Boost deps libs will also be added as IMPORT library.
 #target_link_libraries(${lib_NAME} PRIVATE Boost::boost Boost::filesystem)
 target_link_libraries(${lib_NAME} PRIVATE Boost::regex)
 
-# SQLiteORM
-target_include_directories(${lib_NAME} PRIVATE ${SQLITEORM_INCLUDE_DIR})
+# SQLiteModernCPP
+target_include_directories(${lib_NAME} PRIVATE ${SQLITEMODERNCPP_INCLUDE_DIR})
 
 # SQLite3
 target_include_directories(${lib_NAME} PRIVATE ${SQLITE3_INCLUDE_DIR})
